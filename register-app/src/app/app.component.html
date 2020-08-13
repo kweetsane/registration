@@ -1,0 +1,64 @@
+<div class="container">
+<div class="form">
+<h3>{{title}}</h3>
+
+<h2>HI {{names[1].name}}</h2>
+
+
+
+<div class="input-container">
+  <i class="fa fa-user  icon"></i>
+  <input class="input-field" type="text" placeholder="Firstname" name="firstname"  value={{name}} #firstname>
+</div>
+
+<div class="input-container">
+  <i class="fa fa-envelope icon"></i>
+  <input class="input-field" type="text" placeholder="Surname" name="email"   value={{lastname}} #surname>
+</div>
+
+<div class="input-container">
+  <i class="fa fa-envelope icon"></i>
+  <input class="input-field" type="text" placeholder="Id" name="id" value={{Id}} #id>
+</div>
+
+<div class="input-container">
+  <i class="fa fa-envelope icon"></i>
+  <input class="input-field" type="text" placeholder="Contact"   name="Contact" value={{Contact}} #contact>
+</div>
+
+<div class="input-container">
+  <i class="fa fa-envelope icon"></i>
+  <input class="input-field" type="text" placeholder="Email" name="email" value={{Email}} #email>
+</div>
+
+<button (click)="adduser(firstname.value,surname.value,id.value,contact.value,email.value)">Add</button>
+
+<button (click)="updateUser(firstname.value,surname.value,id.value,contact.value,email.value)" >Update</button>
+
+
+<table id="users">
+  <tr>
+    <th>Firstname</th>
+    <th>Surname</th>
+    <th>ID</th>
+    <th>Contact</th>
+    <th>Email</th>
+    <th>Delete</th>
+    <th>update</th>
+  </tr>
+  <tr *ngFor="let user of   registration ; let i=index">
+    <td>{{user.firstname}}</td>
+    <td>{{user.surname}}</td>
+    <td>{{user.id}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.contact}}</td>
+
+    <td>  <i class="fa fa-trash" aria-hidden="true" (click)="delete(2)" style="color: red; padding-left: 60px; "></i></td>
+  
+    <td>  <i class="fa fa-edit" aria-hidden="true" (click)="edit(i)" style="color: green; padding-left: 60px; "></i></td>
+  
+  </tr>
+  
+</table>
+</div>
+</div>
